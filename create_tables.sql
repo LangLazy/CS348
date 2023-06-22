@@ -1,3 +1,5 @@
+CREATE DATABASE citationmonkeydb;
+USE citationmonkeydb;
 CREATE TABLE author (
 author_id VARCHAR(64) NOT NULL,
 author_name VARCHAR(100) NOT NULL,
