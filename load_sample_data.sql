@@ -1,3 +1,4 @@
+USE citationmonkeydb;
 INSERT INTO author VALUES (1, 'Javin M');
 INSERT INTO author VALUES (2, 'Rahul G');
 INSERT INTO author VALUES (3, 'Rishabh R');
