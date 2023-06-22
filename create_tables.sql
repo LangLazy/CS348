@@ -26,6 +26,7 @@ email VARCHAR(100) NOT NULL,
 user_pass VARCHAR(1000) NOT NULL,
 FOREIGN KEY (author_id) REFERENCES author(author_id),
 PRIMARY KEY (author_id)
+UNIQUE (email)
 );
 
 CREATE TABLE paper (
@@ -44,7 +45,7 @@ issn VARCHAR(100),
 isbn VARCHAR(64),
 doi VARCHAR(64),
 url VARCHAR(200) NOT NULL,
-abstract VARCHAR(500),
+abstract VARCHAR(1500),
 PRIMARY KEY (paper_id)
 );
 
