@@ -177,7 +177,6 @@ INSERT INTO paper VALUES (18, "The role of mindfulness meditation in stress redu
 INSERT INTO wrote VALUES (0, 1);
 INSERT INTO wrote VALUES (1, 1);
 INSERT INTO wrote VALUES (2, 1);
-INSERT INTO wrote VALUES (1, 1);
 INSERT INTO wrote VALUES (3, 1);
 INSERT INTO wrote VALUES (4, 1);
 
@@ -339,7 +338,6 @@ INSERT INTO keywords VALUES (5, "Climate change");
 
 INSERT INTO keywords VALUES (6, "Computer Science");
 INSERT INTO keywords VALUES (6, "Quantum computing");
-INSERT INTO keywords VALUES (6, "future prospects");
 INSERT INTO keywords VALUES (6, "future prospects");
 
 INSERT INTO keywords VALUES (7, "Microbiota");

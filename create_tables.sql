@@ -26,13 +26,13 @@ author_id VARCHAR(64) NOT NULL,
 email VARCHAR(100) NOT NULL,
 user_pass VARCHAR(1000) NOT NULL,
 FOREIGN KEY (author_id) REFERENCES author(author_id),
-PRIMARY KEY (author_id)
+PRIMARY KEY (author_id),
 UNIQUE (email)
 );
 
 CREATE TABLE paper (
 paper_id VARCHAR(64) NOT NULL,
-title VARCHAR(64) NOT NULL,
+title VARCHAR(200) NOT NULL,
 year VARCHAR(64) NOT NULL,
 fos_name VARCHAR(64) NOT NULL,
 n_citation INT NOT NULL,
