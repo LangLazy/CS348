@@ -1,5 +1,6 @@
 CREATE DATABASE citationmonkeydb;
 USE citationmonkeydb;
+
 CREATE TABLE author (
 author_id VARCHAR(64) NOT NULL,
 author_name VARCHAR(100) NOT NULL,
@@ -62,4 +63,13 @@ paper_id VARCHAR(64) NOT NULL,
 word VARCHAR (64) NOT NULL,
 FOREIGN KEY (paper_id) REFERENCES paper(paper_id),
 PRIMARY KEY (paper_id, word)
+);
+
+CREATE TABLE citations (
+paper_id VARCHAR(64) NOT NULL,
+cites_paper_id VARCHAR(64) NOT NULL,
+FOREIGN KEY (paper_id) REFERENCES paper(paper_id),
+FOREIGN KEY (cites_paper_id) REFERENCES paper(paper_id),
+PRIMARY KEY(paper_id, cites_paper_id),
+CONSTRAINT notItself CHECK(paper_id != cites_paper_id)
 );
