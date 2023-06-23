@@ -5,12 +5,23 @@ CS348 Group Project
 
 ```SQL
 CREATE DATABASE CS348;
-CREATE TABLE USERS(uid int, name varchar(30), points int);
-insert into users values(1, 'javin', 69), (2, 'adeit', 2020200), (3, 'padthai', 3);
 create user 'rgudise'@'localhost' identified by 'ligma';
 alter user rgudise@localhost identified with mysql_native_password by 'ligma';
 grant all on *.* to rgudise@localhost;
 ```
+
+Then pipe all the files into mysql so from the command line you can run:
+```
+mysql -u {user} --password={password} -h {host} < create_tables.sql
+mysql -u {user} --password={password} -h {host} < load_sample_data.sql
+mysql -u {user} --password={password} -h {host} < sample_inserts.sql
+mysql -u {user} --password={password} -h {host} < test_inserts.sql
+mysql -u {user} --password={password} -h {host} < sample_get_citation_tree.sql
+mysql -u {user} --password={password} -h {host} < sample_get_keyword.sql
+mysql -u {user} --password={password} -h {host} < sample_get_passwords.sql
+```
+
+An alternative is to copy the file content into mysql workbench and run the commands there.
 
 We have different input and output files for most of the samples.
 

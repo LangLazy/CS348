@@ -1,3 +1,5 @@
+use CS348
+
 with recursive 
 HasCited AS 
 	((SELECT paper_id, cites_paper_id FROM citations WHERE paper_id = 17)
