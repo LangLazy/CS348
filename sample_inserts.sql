@@ -1,4 +1,4 @@
-use CS348
+use CS348;
 
 -- for signing up a user
 INSERT INTO author VALUES (20, 'A lesson');

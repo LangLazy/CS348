@@ -1,5 +1,4 @@
-CREATE DATABASE citationmonkeydb;
-USE citationmonkeydb;
+USE CS348;
 
 CREATE TABLE author (
 author_id VARCHAR(64) NOT NULL,

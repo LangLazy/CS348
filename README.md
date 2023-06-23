@@ -10,7 +10,8 @@ alter user rgudise@localhost identified with mysql_native_password by 'ligma';
 grant all on *.* to rgudise@localhost;
 ```
 
-Then pipe all the files into mysql so from the command line you can run:
+Then pipe all the files into mysql so from the command line you can the following commands below:
+Note that all of these commands assume you have a database called CS348 that was created above.
 ```
 mysql -u {user} --password={password} -h {host} < create_tables.sql
 mysql -u {user} --password={password} -h {host} < load_sample_data.sql

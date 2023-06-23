@@ -1,4 +1,4 @@
-use CS348
+use CS348;
 
 with recursive 
 HasCited AS 

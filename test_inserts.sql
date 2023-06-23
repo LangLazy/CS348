@@ -1,4 +1,4 @@
-use CS348
+use CS348;
 
 SELECT * FROM author WHERE author_id = 20;
 SELECT * FROM user WHERE email = 'punishment@something.com';
