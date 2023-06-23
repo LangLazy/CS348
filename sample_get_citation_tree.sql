@@ -8,5 +8,6 @@ HasCited AS
 		FROM HasCited HC, citations
         WHERE HC.cites_paper_id = citations.paper_id
 	))
-SELECT Distinct p.paper_id, p.title, p.n_citation
-FROM HasCited NATURAL JOIN paper as p;
+SELECT Distinct HasCited.cites_paper_id, p.title, p.n_citation
+FROM HasCited LEFT OUTER JOIN paper as p
+ON HasCited.cites_paper_id = p.paper_id;
