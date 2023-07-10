@@ -75,9 +75,9 @@ CONSTRAINT notItself CHECK(paper_id != cites_paper_id)
 
 CREATE TABLE history (
     user_id VARCHAR(64) NOT NULL,
-    timestamp varchar(20),
+    operation_timestamp TIMESTAMP,
     operation_type char NOT NULL,
     summary VARCHAR(150),
-    PRIMARY KEY(user_id, timestamp),
+    PRIMARY KEY(user_id, operation_timestamp),
     FOREIGN KEY (user_id) REFERENCES user(author_id) ON DELETE CASCADE
 );
