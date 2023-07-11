@@ -1,4 +1,4 @@
-use cs348_project;
+use CS348;
 
 -- ###################################################################
 -- recursively search paper 17 citation history
