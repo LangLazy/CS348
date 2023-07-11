@@ -3,6 +3,7 @@ USE CS348;
 CREATE TABLE author (
 author_id VARCHAR(64) NOT NULL,
 author_name VARCHAR(100),
+elo INT NOT NULL,
 PRIMARY KEY(author_id)
 );
 
