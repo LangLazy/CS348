@@ -2,13 +2,13 @@ USE CS348;
 
 CREATE TABLE author (
 author_id VARCHAR(64) NOT NULL,
-author_name VARCHAR(100) NOT NULL,
+author_name VARCHAR(100),
 PRIMARY KEY(author_id)
 );
 
 CREATE TABLE institution (
 org_id VARCHAR(64) NOT NULL,
-org_name VARCHAR(100) NOT NULL,
+org_name VARCHAR(100),
 PRIMARY KEY(org_id)
 );
 
@@ -31,10 +31,10 @@ UNIQUE (email)
 
 CREATE TABLE paper (
 paper_id VARCHAR(64) NOT NULL,
-title VARCHAR(200) NOT NULL,
-year VARCHAR(64) NOT NULL,
-fos_name VARCHAR(64) NOT NULL,
-n_citation INT NOT NULL,
+title VARCHAR(200),
+year VARCHAR(64),
+fos_name VARCHAR(64),
+n_citation INT,
 page_start INT,
 page_end INT,
 doc_type VARCHAR(64),
@@ -44,7 +44,7 @@ issue INT,
 issn VARCHAR(100),
 isbn VARCHAR(64),
 doi VARCHAR(64),
-url VARCHAR(200) NOT NULL,
+url VARCHAR(200),
 abstract VARCHAR(1500),
 PRIMARY KEY (paper_id)
 );
@@ -70,7 +70,6 @@ cites_paper_id VARCHAR(64) NOT NULL,
 FOREIGN KEY (paper_id) REFERENCES paper(paper_id),
 FOREIGN KEY (cites_paper_id) REFERENCES paper(paper_id),
 PRIMARY KEY(paper_id, cites_paper_id),
-CONSTRAINT notItself CHECK(paper_id != cites_paper_id)
 );
 
 CREATE TABLE history (
