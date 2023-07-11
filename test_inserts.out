@@ -1,6 +1,0 @@
-author_id	author_name
-20	A lesson
-author_id	email	user_pass
-20	punishment@something.com	Uncrackable
-paper_id	title	year	fos_name	n_citation	page_start	page_end	doc_type	lang	vol	issue	issn	isbn	doi	url	abstract
-24	i prove hypothesis	2010	Math	1	NULL	NULL	NULL	FR	NULL	NULL	NULL	NULL	NULL	https://www.google.ca/	n = 1, p = np proved

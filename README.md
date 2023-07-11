@@ -15,11 +15,7 @@ Note that all of these commands assume you have a database called CS348 that was
 ```
 mysql -u {user} --password={password} -h {host} < create_tables.sql
 mysql -u {user} --password={password} -h {host} < load_sample_data.sql
-mysql -u {user} --password={password} -h {host} < sample_inserts.sql
-mysql -u {user} --password={password} -h {host} < test_inserts.sql
-mysql -u {user} --password={password} -h {host} < sample_get_citation_tree.sql
-mysql -u {user} --password={password} -h {host} < sample_get_keyword.sql
-mysql -u {user} --password={password} -h {host} < sample_get_passwords.sql
+mysql -u {user} --password={password} -h {host} < sample_tests.sql
 ```
 
 An alternative is to copy the file content into mysql workbench and run the commands there.
