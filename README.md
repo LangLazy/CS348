@@ -35,3 +35,72 @@ The features we support are:
  
     - username: testAccount@gmail.com 
     - password: test123
+
+## Ingest
+
+Ingesting this data is an involved process. First, you must create flat files (.csv) that are ingestable by the `mysqlimport` utility. We do this in `ingest/mutate-json.py`.
+To run this file, first make sure you are running Python 3.9+. Then `pip install ijson` followed by
+```
+cd ingest
+```
+Making sure that the `dblp_v14.json` file is in the same folder as `mutate-json.py`, run
+```
+python3 mutate-json.py
+```
+This will create the `.csv` files for every table in our database. This process took ~15 minutes on an M1 Macbook Pro with an M.2 SSD. Time may vary for older machines.
+
+Now, you have the `.csv` files you can ingest into a `mysql` database. First, ensure you've run our `create_tables.sql` file in your mysql database and created the relevant tables.
+Then you can use the `mysqlimport` utility to ingest the files into the database. We first must do the `paper`, `author`, and `institution` tables, then we can do the rest. This ordering
+is important to avoid foreign key constraint violations when loading in data.
+
+### Paper
+To do the paper upload, run
+```
+mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='paper_id,title,year,fos_name,n_citation,page_start,page_end,doc_type,lang,vol,issue,issn,isbn,doi,url,abstract' cs348 paper.csv
+```
+This may timeout if your mySQL database timeout is too low. To avoid this, you can split the `paper.csv` file into smaller parts and upload them in parallel.
+```
+split -d -l 500000 paper.csv paper.part_
+```
+After this you can run
+```
+mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='paper_id,title,year,fos_name,n_citation,page_start,page_end,doc_type,lang,vol,issue,issn,isbn,doi,url,abstract' cs348 paper.part_*
+```
+
+### Author
+To do the author upload, run
+```
+mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='author_id,author_name,elo' cs348 author.csv
+```
+
+### Institution
+To do the institution upload, run
+```
+mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='org_id,org_name' cs348 institution.csv
+```
+
+### Affiliated
+To do the affiliated upload, run
+```
+mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='author_id,org_id' cs348 affiliated.csv
+```
+
+### Citations
+To do the citations upload, run
+```
+mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='paper_id,cites_paper_id' cs348 citations.csv
+```
+
+### Wrote
+To do the wrote upload, run
+```
+mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='author_id,paper_id' cs348 wrote.csv
+```
+
+### Keywords
+To do the keywords upload, run
+```
+mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='paper_id,word' cs348 keywords.csv
+```
+
+Make sure to run Author, Paper, and Institution before running Affiliated, Citations, Wrote, and Keywords. These will take time, likely on the magnitude of 4-5 hours to finish. Be patient!
