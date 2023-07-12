@@ -59,7 +59,8 @@ Make sure that you can ingest local files by following [this](https://stackoverf
 ### Paper
 To do the paper upload, run
 ```
-mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='paper_id,title,year,fos_name,n_citation,page_start,page_end,doc_type,lang,vol,issue,issn,isbn,doi,url,abstract' cs348 paper.csv
+LOAD DATA LOCAL INFILE '<path_to_paper>' INTO TABLE paper FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
+
 ```
 This may timeout if your mySQL database timeout is too low. To avoid this, you can split the `paper.csv` file into smaller parts and upload them in parallel.
 ```
