@@ -10,3 +10,4 @@ with open('./author.csv') as file:
             print (f)
             break
     print(t)
+    exit()
