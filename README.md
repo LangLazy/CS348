@@ -50,8 +50,11 @@ python3 mutate-json.py
 This will create the `.csv` files for every table in our database. This process took ~15 minutes on an M1 Macbook Pro with an M.2 SSD. Time may vary for older machines.
 
 Now, you have the `.csv` files you can ingest into a `mysql` database. First, ensure you've run our `create_tables.sql` file in your mysql database and created the relevant tables.
-Then you can use the `mysqlimport` utility to ingest the files into the database. We first must do the `paper`, `author`, and `institution` tables, then we can do the rest. This ordering
+Then you can use the `mysql LOAD DATA LOCAL INFILE` command to ingest the files into the database. We first must do the `paper`, `author`, and `institution` tables, then we can do the rest. This ordering
 is important to avoid foreign key constraint violations when loading in data.
+
+Make sure that you can ingest local files by following [this](https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client) StackOverflow post.
+
 
 ### Paper
 To do the paper upload, run
