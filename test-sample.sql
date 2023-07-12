@@ -40,7 +40,7 @@ FROM
             paper p 
             NATURAL JOIN 
             keywords t 
-        WHERE t.word = 'HVM' OR t.word LIKE '%C%' 
+        WHERE t.word = 'HVM' OR t.word LIKE '%C%' AND t.word NOT LIKE '%a%'
         GROUP BY paper_id
     ) as Y;
 
