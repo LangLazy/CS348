@@ -64,43 +64,46 @@ split -d -l 500000 paper.csv paper.part_
 ```
 After this you can run
 ```
-mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='paper_id,title,year,fos_name,n_citation,page_start,page_end,doc_type,lang,vol,issue,issn,isbn,doi,url,abstract' cs348 paper.part_*
+LOAD DATA LOCAL INFILE '<path_to_paper_part>' INTO TABLE paper FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 ```
 
 ### Author
 To do the author upload, run
 ```
-mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='author_id,author_name,elo' cs348 author.csv
+LOAD DATA LOCAL INFILE '<path_to_author>' INTO TABLE author FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
+
 ```
 
 ### Institution
 To do the institution upload, run
 ```
-mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='org_id,org_name' cs348 institution.csv
+LOAD DATA LOCAL INFILE '<path_to_institution>' INTO TABLE institution FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
+
 ```
 
 ### Affiliated
 To do the affiliated upload, run
 ```
-mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='author_id,org_id' cs348 affiliated.csv
+LOAD DATA LOCAL INFILE '<path_to_affiliated>' INTO TABLE affiliated FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
+
 ```
 
 ### Citations
 To do the citations upload, run
 ```
-mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='paper_id,cites_paper_id' cs348 citations.csv
+LOAD DATA LOCAL INFILE '<path_to_citations>' INTO TABLE citations FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 ```
 
 ### Wrote
 To do the wrote upload, run
 ```
-mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='author_id,paper_id' cs348 wrote.csv
+LOAD DATA LOCAL INFILE '<path_to_wrote>' INTO TABLE wrote FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 ```
 
 ### Keywords
 To do the keywords upload, run
 ```
-mysqlimport --local --compress --user=admin --password --host=<your-mysql-instance-host> --fields-terminated-by=',' --columns='paper_id,word' cs348 keywords.csv
+LOAD DATA LOCAL INFILE '<path_to_keywords>' INTO TABLE keywords FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 ```
 
 Make sure to run Author, Paper, and Institution before running Affiliated, Citations, Wrote, and Keywords. These will take time, likely on the magnitude of 4-5 hours to finish. Be patient!
