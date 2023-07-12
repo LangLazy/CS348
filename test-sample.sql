@@ -1,11 +1,11 @@
-use CS348;
+use CS348_project;
 
 -- ###################################################################
 -- recursively search paper 17 citation history
 -- ###################################################################
 with recursive 
 HasCited AS 
-	((SELECT paper_id, cites_paper_id FROM citations WHERE paper_id = 17)
+	((SELECT paper_id, cites_paper_id FROM citations WHERE paper_id = '17')
     UNION
     (SELECT citations.paper_id, citations.cites_paper_id
 		FROM HasCited HC, citations
@@ -67,6 +67,9 @@ INSERT INTO paper VALUES (24, "i prove hypothesis", 2010, "Math",
 SELECT * FROM author WHERE author_id = 20;
 SELECT * FROM user WHERE email = 'punishment@something.com';
 SELECT * FROM paper WHERE paper_id = 24;
+
+-- testing another update
+UPDATE paper SET title='ligma', lang='kli' WHERE paper_id=1;
 
 -- Testing update on the new paper added
 UPDATE paper SET title = "I am smart", fos_name="Intelligence" WHERE paper_id='24';
