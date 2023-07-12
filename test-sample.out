@@ -1,5 +1,5 @@
 cites_paper_id	title	n_citation
-1	480 ways to introduce ml	2
+1	ligma	2
 2	i prove hypothesis	1
 4	Deep learning for image recognition: A comprehensive survey	2
 6	Quantum computing: An overview and future prospects	2
@@ -16,7 +16,7 @@ cites_paper_id	title	n_citation
 16	The impact of urbanization on biodiversity conservation	2
 18	The role of mindfulness meditation in stress reduction	2
 paper_id	Authors	Authors_id	title	year	fos_name	n_citation	page_start	page_end	doc_type	lang	vol	issue	isbn	doi	url	abstract	Keywords
-1	God Himself	0	480 ways to introduce ml	2023	Machine Learning	2	NULL	NULL	NULL	EN	NULL	NULL	NULL	NULL	https://www.google.ca/	ml very nice yes, i proved halting problem	Computer Science,HVM,Perceptron
+1	God Himself	0	ligma	2023	Machine Learning	2	NULL	NULL	NULL	kli	NULL	NULL	NULL	NULL	https://www.google.ca/	ml very nice yes, i proved halting problem	Computer Science,HVM,Perceptron
 12	God Himself	0	Cryptocurrency and blockchain technology: Challenges and opportunities	2023	Finance/Computer Science	2	NULL	NULL	NULL	EN	NULL	NULL	NULL	NULL	https://www.google.ca/	Cryptocurrency and blockchain technology have gained significant attention in recent years, disrupting traditional financial systems and opening up new avenues for financial transactions and decentralized applications. This paper examines the challenges and opportunities associated with cryptocurrencies and blockchain technology. It discusses the technical underpinnings of blockchain, including consensus mechanisms, smart contracts, and privacy considerations. It also explores the potential impacts of cryptocurrencies on financial systems, regulatory frameworks, and societal aspects. This paper aims to provide a comprehensive overview of the emerging field of cryptocurrencies and blockchain technology.	Cryptocurrency
 13	God Himself	0	The effects of exercise on mental health and well-being	2023	Psychology/Physical Education	2	NULL	NULL	NULL	EN	NULL	NULL	NULL	NULL	https://www.google.ca/	Regular exercise has been recognized as a crucial factor in promoting mental health and well-being. This paper reviews the existing literature on the effects of exercise on mental health outcomes, such as depression, anxiety, and cognitive function. It discusses the underlying physiological and psychological mechanisms through which exercise exerts its beneficial effects on mental well-being. Additionally, it explores the optimal exercise modalities, duration, and frequency for different populations and mental health conditions. The findings presented in this paper contribute to the understanding of the role of exercise in promoting mental health and inform evidence-based interventions.	Exercise
 18	God Himself	0	The role of mindfulness meditation in stress reduction	2023	Mind-Body Medicine/Psychiatry	2	NULL	NULL	NULL	EN	NULL	NULL	NULL	NULL	https://www.google.ca/	Mindfulness meditation has gained popularity as a practice that promotes relaxation, stress reduction, and overall well-being. This paper explores the effects of mindfulness meditation on stress reduction, emotional regulation, and cognitive functioning. It discusses the underlying mechanisms of mindfulness, such as attentional control, non-judgmental awareness, and self-compassion. Furthermore, it examines the potential applications of mindfulness meditation in therapeutic interventions for various mental health conditions. The findings presented in this paper contribute to the understanding of the benefits of mindfulness meditation and its potential as an adjunctive treatment in mental health care.	stress reduction
@@ -26,9 +26,11 @@ paper_id	Authors	Authors_id	title	year	fos_name	n_citation	page_start	page_end	d
 8	God Himself	0	Exploring the potential of gene editing in treating genetic disorders	2023	Genetics/Biotechnology	2	NULL	NULL	NULL	EN	NULL	NULL	NULL	NULL	https://www.google.ca/	Gene editing technologies, such as CRISPR-Cas9, have revolutionized the field of genetics by offering precise and efficient tools to modify the genetic code. This paper explores the potential of gene editing in treating genetic disorders, including monogenic diseases and complex disorders with a genetic component. It discusses the challenges and ethical considerations associated with gene editing and examines the current progress in clinical applications of this technology. The findings presented in this paper provide valuable insights into the prospects of gene editing as a transformative approach in the field of genetic medicine	genetic disorders
 user_pass
 Password
-author_id	author_name
-20	A lesson
+author_id	author_name	elo
+20	A lesson	1200
 author_id	email	user_pass
 20	punishment@something.com	Uncrackable
 paper_id	title	year	fos_name	n_citation	page_start	page_end	doc_type	lang	vol	issue	issn	isbn	doi	url	abstract
 24	i prove hypothesis	2010	Math	1	NULL	NULL	NULL	FR	NULL	NULL	NULL	NULL	NULL	https://www.google.ca/	n = 1, p = np proved
+paper_id	title	year	fos_name	n_citation	page_start	page_end	doc_type	lang	vol	issue	issn	isbn	doi	url	abstract
+24	I am smart	2010	Intelligence	1	NULL	NULL	NULL	FR	NULL	NULL	NULL	NULL	NULL	https://www.google.ca/	n = 1, p = np proved
