@@ -5,7 +5,7 @@ use CS348;
 -- ###################################################################
 with recursive 
 HasCited AS 
-	((SELECT paper_id, cites_paper_id FROM citations WHERE paper_id = 17)
+	((SELECT paper_id, cites_paper_id FROM citations WHERE paper_id = '53e99854b7602d970208d772')
     UNION
     (SELECT citations.paper_id, citations.cites_paper_id
 		FROM HasCited HC, citations
@@ -28,7 +28,6 @@ FROM
             author a 
             NATURAL JOIN 
             wrote w
-        WHERE a.author_name like '%God%' 
         GROUP BY w.paper_id
     ) as X 
     NATURAL JOIN 
@@ -40,7 +39,7 @@ FROM
             paper p 
             NATURAL JOIN 
             keywords t 
-        WHERE t.word = 'HVM' OR t.word LIKE '%C%' AND t.word NOT LIKE '%a%'
+        WHERE p.title = 'Efficient Mutually Orthogonal Golay Complementary Set-Based Zero-Correlation Zone Sequence Set Correlator.'
         GROUP BY paper_id
     ) as Y;
 
