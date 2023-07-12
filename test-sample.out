@@ -26,9 +26,11 @@ paper_id	Authors	Authors_id	title	year	fos_name	n_citation	page_start	page_end	d
 8	God Himself	0	Exploring the potential of gene editing in treating genetic disorders	2023	Genetics/Biotechnology	2	NULL	NULL	NULL	EN	NULL	NULL	NULL	NULL	https://www.google.ca/	Gene editing technologies, such as CRISPR-Cas9, have revolutionized the field of genetics by offering precise and efficient tools to modify the genetic code. This paper explores the potential of gene editing in treating genetic disorders, including monogenic diseases and complex disorders with a genetic component. It discusses the challenges and ethical considerations associated with gene editing and examines the current progress in clinical applications of this technology. The findings presented in this paper provide valuable insights into the prospects of gene editing as a transformative approach in the field of genetic medicine	genetic disorders
 user_pass
 Password
-author_id	author_name
-20	A lesson
+author_id	author_name	elo
+20	A lesson	1200
 author_id	email	user_pass
 20	punishment@something.com	Uncrackable
 paper_id	title	year	fos_name	n_citation	page_start	page_end	doc_type	lang	vol	issue	issn	isbn	doi	url	abstract
 24	i prove hypothesis	2010	Math	1	NULL	NULL	NULL	FR	NULL	NULL	NULL	NULL	NULL	https://www.google.ca/	n = 1, p = np proved
+paper_id	title	year	fos_name	n_citation	page_start	page_end	doc_type	lang	vol	issue	issn	isbn	doi	url	abstract
+24	I am smart	2010	Intelligence	1	NULL	NULL	NULL	FR	NULL	NULL	NULL	NULL	NULL	https://www.google.ca/	n = 1, p = np proved

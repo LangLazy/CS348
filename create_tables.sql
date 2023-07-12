@@ -81,9 +81,3 @@ CREATE TABLE history (
     PRIMARY KEY(user_id, operation_timestamp),
     FOREIGN KEY (user_id) REFERENCES user(author_id) ON DELETE CASCADE
 );
-
-CREATE INDEX AuthorNameIndex on author(author_name);
-CREATE INDEX UserEmailIndex on user(email);
-CREATE INDEX PaperTitleIndex on paper(title);
-CREATE INDEX KeywordIndex on keywords(word);
-CREATE INDEX PaperCitesIndex on citations(cites_paper_id);
