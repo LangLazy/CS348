@@ -1,19 +1,24 @@
 use CS348;
 
 -- ###################################################################
--- recursively search paper 17 citation history
+-- recursively search papers citation history, max recursion depth of 3 for efficiency
 -- ###################################################################
+
 with recursive 
 HasCited AS 
-	((SELECT paper_id, cites_paper_id FROM citations WHERE paper_id = '53e99854b7602d970208d772')
+    ((SELECT paper_id, cites_paper_id, 0 as rec_level FROM citations WHERE paper_id = '57d063b4ac4436735428dca0')
     UNION
-    (SELECT citations.paper_id, citations.cites_paper_id
-		FROM HasCited HC, citations
-        WHERE HC.cites_paper_id = citations.paper_id
-	))
-SELECT Distinct HasCited.cites_paper_id, p.title, p.n_citation
+    (SELECT citations.paper_id, citations.cites_paper_id, rec_level + 1
+        FROM HasCited HC, citations
+        WHERE HC.cites_paper_id = citations.paper_id and rec_level < 3
+    ))
+SELECT Distinct x.paper_id, x.cites_paper_id, x.title as cited_title, c.title
+FROM (
+SELECT HasCited.paper_id, HasCited.cites_paper_id, p.title 
 FROM HasCited LEFT OUTER JOIN paper as p
-ON HasCited.cites_paper_id = p.paper_id;
+ON HasCited.cites_paper_id = p.paper_id) x
+LEFT OUTER JOIN paper c
+ON x.paper_id = c.paper_id; 
 
 -- ###################################################################
 -- Testing the query function, get papers written by an
