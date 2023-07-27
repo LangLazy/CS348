@@ -1,7 +1,7 @@
 use CS348;
 
 -- ###################################################################
--- recursively search paper citation history, with max recursion depth of 3
+-- recursively search papers citation history, max recursion depth of 3 for efficiency
 -- ###################################################################
 
 with recursive 
