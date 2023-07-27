@@ -1,7 +1,7 @@
 use CS348;
 
 -- ###################################################################
--- recursively search papers citation history, max recursion depth of 3 for efficiency
+-- recursively search paper 17 citation history
 -- ###################################################################
 
 with recursive 
@@ -57,10 +57,10 @@ SELECT u.user_pass FROM user as u WHERE u.email = 'j23mheta@uwaterloo.ca';
 -- Inserting data
 -- ###################################################################
 -- for signing up a user
-INSERT INTO author VALUES (20, 'A lesson', 1200);
-INSERT INTO user VALUES (20, 'punishment@something.com', 'Uncrackable');
+INSERT INTO author VALUES ('20', 'A lesson', 1200);
+INSERT INTO user VALUES ('20', 'punishment@something.com', 'Uncrackable');
 -- for adding papers
-INSERT INTO paper VALUES (24, "i prove hypothesis", 2010, "Math",
+INSERT INTO paper VALUES ('24', "i prove hypothesis", 2010, "Math",
     "1", NULL, NULL, NULL, 'FR', NULL, NULL, NULL, NULL, NULL, "https://www.google.ca/",
     "n = 1, p = np proved"
 );
@@ -68,13 +68,13 @@ INSERT INTO paper VALUES (24, "i prove hypothesis", 2010, "Math",
 -- ###################################################################
 -- Testing inserts
 -- ###################################################################
-SELECT * FROM author WHERE author_id = 20;
+SELECT * FROM author WHERE author_id = '20';
 SELECT * FROM user WHERE email = 'punishment@something.com';
-SELECT * FROM paper WHERE paper_id = 24;
+SELECT * FROM paper WHERE paper_id = '24';
 
 -- Testing update on the new paper added
 UPDATE paper SET title = "I am smart", fos_name="Intelligence" WHERE paper_id='24';
-SELECT * FROM paper WHERE paper_id = 24;
+SELECT * FROM paper WHERE paper_id = '24';
 
 -- remove inserts so we can run test multiple times
 DELETE FROM user WHERE author_id = '20';
