@@ -1,11 +1,11 @@
-use CS348_project;
+use CS348;
 
 -- ###################################################################
 -- recursively search paper 17 citation history
 -- ###################################################################
 with recursive 
 HasCited AS 
-	((SELECT paper_id, cites_paper_id FROM citations WHERE paper_id = '17')
+	((SELECT paper_id, cites_paper_id FROM citations WHERE paper_id = '53e99854b7602d970208d772')
     UNION
     (SELECT citations.paper_id, citations.cites_paper_id
 		FROM HasCited HC, citations
@@ -28,7 +28,6 @@ FROM
             author a 
             NATURAL JOIN 
             wrote w
-        WHERE a.author_name like '%God%' 
         GROUP BY w.paper_id
     ) as X 
     NATURAL JOIN 
@@ -40,7 +39,7 @@ FROM
             paper p 
             NATURAL JOIN 
             keywords t 
-        WHERE t.word = 'HVM' OR t.word LIKE '%C%' AND t.word NOT LIKE '%a%'
+        WHERE p.title = 'Efficient Mutually Orthogonal Golay Complementary Set-Based Zero-Correlation Zone Sequence Set Correlator.'
         GROUP BY paper_id
     ) as Y;
 
@@ -67,9 +66,6 @@ INSERT INTO paper VALUES (24, "i prove hypothesis", 2010, "Math",
 SELECT * FROM author WHERE author_id = 20;
 SELECT * FROM user WHERE email = 'punishment@something.com';
 SELECT * FROM paper WHERE paper_id = 24;
-
--- testing another update
-UPDATE paper SET title='ligma', lang='kli' WHERE paper_id=1;
 
 -- Testing update on the new paper added
 UPDATE paper SET title = "I am smart", fos_name="Intelligence" WHERE paper_id='24';

@@ -119,13 +119,13 @@ def write_cites_csv(file:TextIOWrapper, citer: str, citee: str):
 printer = pprint.PrettyPrinter()
 total_papers = 0
 
-paper_csv = open('./paper.csv', 'w')
-author_csv = open('./author.csv', 'w')
-wrote_csv = open('./wrote.csv', 'w')
-affiliated_csv = open('./affiliated.csv', 'w')
-cites_csv = open('./citations.csv', 'w')
-keyword_csv = open('./keywords.csv', 'w')
-org_csv = open('./institution.csv', 'w')
+paper_csv = open('./paper.csv', 'w', encoding='utf-8')
+author_csv = open('./author.csv', 'w', encoding='utf-8')
+wrote_csv = open('./wrote.csv', 'w', encoding='utf-8')
+affiliated_csv = open('./affiliated.csv', 'w', encoding='utf-8')
+cites_csv = open('./citations.csv', 'w', encoding='utf-8')
+keyword_csv = open('./keywords.csv', 'w', encoding='utf-8')
+org_csv = open('./institution.csv', 'w', encoding='utf-8')
 
 # paper columns
 # "paper_id,title,year,fos_name,n_citation,page_start,page_end,doc_type,lang,vol,issue,issn,isbn,doi,url,abstract"
@@ -150,7 +150,7 @@ org_csv = open('./institution.csv', 'w')
 
 org_dict = {}
 author_dict = {}
-with open('./dblp_v14.json') as json_data:
+with open('./dblp_v14.json', encoding='utf-8') as json_data:
     for record in ijson.items(json_data, "item"):
         total_papers += 1
 
