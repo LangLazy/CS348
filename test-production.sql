@@ -21,9 +21,8 @@ LEFT OUTER JOIN paper c
 ON x.paper_id = c.paper_id; 
 
 -- ###################################################################
--- Testing the query function, get papers written by an
--- author with the name containing god and has the key word 
--- exactly as HVM or it has a keyword containing C
+-- Testing the query function, get papers with the title exactly being 
+-- Efficient Mutually Orthogonal Golay Complementary Set-Based Zero-Correlation Zone Sequence Set Correlator.
 -- ###################################################################
 SELECT * 
 FROM 
