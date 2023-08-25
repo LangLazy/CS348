@@ -5,8 +5,8 @@ CS348 Group Project
 
 ```SQL
 CREATE DATABASE CS348;
-create user 'rgudise'@'localhost' identified by 'ligma';
-alter user rgudise@localhost identified with mysql_native_password by 'ligma';
+create user 'rgudise'@'localhost' identified by 'testuser';
+alter user rgudise@localhost identified with mysql_native_password by 'testuser';
 grant all on *.* to rgudise@localhost;
 ```
 
